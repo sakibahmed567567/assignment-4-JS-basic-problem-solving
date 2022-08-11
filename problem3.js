@@ -24,8 +24,10 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
     let octanePerQuantityPrice = 135;
     let totalOctanePrice = octaneQuantity * octanePerQuantityPrice;
     let totalOilPrice = totalDieselPrice + totalPetrolPrice + totalOctanePrice;
-
-    if (dieselQuantity < 0 && petrolQuantity < 0 && octaneQuantity < 0) {
+    if (dieselQuantity == '' || petrolQuantity == '' || octaneQuantity == '') {
+        return 'Oh no! Please enter a number input';
+    }
+    else if (dieselQuantity < 0 && petrolQuantity < 0 && octaneQuantity < 0) {
         return 'Oh no! oil quantity must be a positive value';
     }
     else if (dieselQuantity < 0 || petrolQuantity < 0 || octaneQuantity < 0) {
@@ -41,6 +43,6 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
         return totalOilPrice;
     }
 }
-let givenDieselQuantity = 0, givenPetrolQuantity = 8, givenOctaneQuantity = 3;
+let givenDieselQuantity = '', givenPetrolQuantity = 8, givenOctaneQuantity = 3;
 let assignQuantity = oilPrice(givenDieselQuantity, givenPetrolQuantity, givenOctaneQuantity);
 console.log(assignQuantity);

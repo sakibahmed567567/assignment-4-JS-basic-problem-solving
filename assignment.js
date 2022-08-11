@@ -14,6 +14,7 @@ function radianToDegree(radian) {
 //Problem 2: isJavaScriptFile check
 
 function isJavaScriptFile(fileName) {
+
     if (fileName == '') {
         return 'Please enter your file name';
     }
@@ -28,6 +29,7 @@ function isJavaScriptFile(fileName) {
 //Problem 3: oilPrice calculating
 
 function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
+
     let dieselPerQuantityPrice = 114;
     let totalDieselPrice = dieselQuantity * dieselPerQuantityPrice;
     let petrolPerQuantityPrice = 130;
@@ -36,8 +38,11 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
     let totalOctanePrice = octaneQuantity * octanePerQuantityPrice;
     let totalOilPrice = totalDieselPrice + totalPetrolPrice + totalOctanePrice;
 
-    if (dieselQuantity < 0 && petrolQuantity < 0 && octaneQuantity < 0) {
-        return 'Oh no! oil quantity must be a positive value';
+    if (dieselQuantity == '' || petrolQuantity == '' || octaneQuantity == '') {
+        return 'Oh no! Please enter a number input';
+    }
+    else if (dieselQuantity < 0 && petrolQuantity < 0 && octaneQuantity < 0) {
+        return 'Oh no! Oil quantity must be a positive value';
     }
     else if (dieselQuantity < 0 || petrolQuantity < 0 || octaneQuantity < 0) {
         return 'Oh no! We can not calculate oil price in negative input';
@@ -56,6 +61,7 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
 //Problem 4: publicBusFare calculating
 
 function publicBusFare(goingPeople) {
+
     const busFare = 250;
     let remainderBeforeGoingReservedBus = goingPeople % 11;
     let remainderAfterGoingReservedBus = goingPeople % 50;
