@@ -4,7 +4,7 @@
 
 function isJavaScriptFile(fileName) {
     if (fileName == '') {
-        return 'Please enter your file name'
+        return 'Please enter your file name';
     }
     else if (fileName.endsWith('.js')) {
         return true;

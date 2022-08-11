@@ -15,7 +15,7 @@ function radianToDegree(radian) {
 
 function isJavaScriptFile(fileName) {
     if (fileName == '') {
-        return 'Please enter your file name'
+        return 'Please enter your file name';
     }
     else if (fileName.endsWith('.js')) {
         return true;
@@ -57,9 +57,9 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
 
 function publicBusFare(goingPeople) {
     const busFare = 250;
-    let remainderBeforeGoingBus = goingPeople % 11;
-    let remainderAfterGoingBus = goingPeople % 50;
-    let remainderAfterGoingMicro = remainderAfterGoingBus % 11;
+    let remainderBeforeGoingReservedBus = goingPeople % 11;
+    let remainderAfterGoingReservedBus = goingPeople % 50;
+    let remainderAfterGoingMicro = remainderAfterGoingReservedBus % 11;
 
     if (goingPeople <= 0) {
         return 'You have to take someone if you want to go to picnic'
@@ -67,17 +67,17 @@ function publicBusFare(goingPeople) {
     else if (goingPeople > 0 && goingPeople < 11) {
         return goingPeople * busFare;
     }
-    else if (remainderBeforeGoingBus == 0 && goingPeople < 50) {
+    else if (remainderBeforeGoingReservedBus == 0 && goingPeople < 50) {
         return 0;
     }
-    else if (remainderBeforeGoingBus > 0 && remainderBeforeGoingBus < 11 && goingPeople < 50) {
-        return remainderBeforeGoingBus * busFare;
+    else if (remainderBeforeGoingReservedBus > 0 && remainderBeforeGoingReservedBus < 11 && goingPeople < 50) {
+        return remainderBeforeGoingReservedBus * busFare;
     }
-    else if (remainderAfterGoingBus == 0) {
+    else if (remainderAfterGoingReservedBus == 0) {
         return 0;
     }
-    else if (remainderAfterGoingBus > 0 && remainderAfterGoingBus < 11) {
-        return remainderAfterGoingBus * busFare;
+    else if (remainderAfterGoingReservedBus > 0 && remainderAfterGoingReservedBus < 11) {
+        return remainderAfterGoingReservedBus * busFare;
     }
     else if (remainderAfterGoingMicro > 0 && remainderAfterGoingMicro < 11) {
         return remainderAfterGoingMicro * busFare;
